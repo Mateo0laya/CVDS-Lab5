@@ -18,3 +18,9 @@
   - Redirección 3xx : es necesario tomar más medidas para completar la solicitud
   - Error de cliente 4xx : la solicitud contiene una sintaxis incorrecta o no se puede cumplir
   - Error del servidor 5xx : el servidor no pudo cumplir con una solicitud aparentemente válida
+
+3.Realice una nueva conexión con telnet, esta vez a: Host:www.httpbin.org Ahora,solicite (GET) el recurso /html.¿Qué se obtiene como resultado?
+
+![image](https://user-images.githubusercontent.com/63562181/223794403-bfdf1039-32ae-48d9-bf64-04959c2e8931.png)
+
+El error generado es 400 Bad Request, además de devolver una estructura html.
