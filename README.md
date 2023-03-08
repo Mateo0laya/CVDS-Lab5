@@ -60,4 +60,4 @@ curl -i www.httpbin.org
 
 ![image](https://user-images.githubusercontent.com/63562181/223802179-fdd1b719-e2ec-4752-8d0b-8b0eae694b3e.png)
 
-
+¿Cuáles son las diferencias con los diferentes parámetros?
