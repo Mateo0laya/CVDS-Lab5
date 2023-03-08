@@ -24,3 +24,6 @@
 ![image](https://user-images.githubusercontent.com/63562181/223794403-bfdf1039-32ae-48d9-bf64-04959c2e8931.png)
 
 El error generado es 400 Bad Request, además de devolver una estructura html.
+
+5. Seleccione elcontenido HTML de la respuesta y copielo alcortapapeles CTRL-SHIFT-C. Ejecute elcomando wc (word count) para contar palabrascon la
+opción -c para contar el número de caracteres:
