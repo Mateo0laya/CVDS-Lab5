@@ -43,3 +43,21 @@ Otros:
 - CONNECT: El método CONNECT establece un túnel hacia el servidor identificado por el recurso.
 - PATCH: El método PATCH es utilizado para aplicar modificaciones parciales a un recurso.
 - OPTIONS: El método OPTIONS es utilizado para describir las opciones de comunicación para el recurso de destino.
+
+
+6.En la practica no se utiliza telnet para hacer peticiones a sitios web sino el comando curl con ayuda de la linea d comandos: “curl
+www.httpbin.org”
+
+![image](https://user-images.githubusercontent.com/63562181/223801369-aaff0192-579c-429f-860e-f253e4ca6f56.png)
+
+Utilice ahora el parámetro -v y con el parámetro -i:
+
+curl -v www.httpbin.org
+
+![image](https://user-images.githubusercontent.com/63562181/223801999-153f3cc2-69eb-4f9a-ada3-15338f0c4418.png)
+
+curl -i www.httpbin.org
+
+![image](https://user-images.githubusercontent.com/63562181/223802179-fdd1b719-e2ec-4752-8d0b-8b0eae694b3e.png)
+
+
