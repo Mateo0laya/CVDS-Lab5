@@ -29,3 +29,8 @@ El error generado es 400 Bad Request, además de devolver una estructura html.
 opción -c para contar el número de caracteres:
 
 ![image](https://user-images.githubusercontent.com/63562181/223797008-ce5f8da0-9437-4710-88a3-dd99d78adba0.png)
+
+Claro está, las peticiones GET son insuficientes en muchoscasos. Investigue:¿Cuál esla diferencia entre los verbos GET y POST?¿Qué otrostipos de
+peticiones existen?
+- GET: El método GET solicita una representación de un recurso específico. Las peticiones que usan el método GET sólo deben recuperar datos.
+- POST: El método POST se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.
