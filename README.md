@@ -27,3 +27,5 @@ El error generado es 400 Bad Request, además de devolver una estructura html.
 
 5. Seleccione elcontenido HTML de la respuesta y copielo alcortapapeles CTRL-SHIFT-C. Ejecute elcomando wc (word count) para contar palabrascon la
 opción -c para contar el número de caracteres:
+
+![image](https://user-images.githubusercontent.com/63562181/223797008-ce5f8da0-9437-4710-88a3-dd99d78adba0.png)
