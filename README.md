@@ -93,3 +93,6 @@ mvn tomcat7:run
 
 5. Abra un navegador, y en la barra de direcciones ponga la URL con la cualse le enviarán peticiones al ‘SampleServlet’. Tenga en cuenta que la URL tendrá
 como host ‘localhost’,como puerto, elconfigurado en el pom.xml y el path debe ser el del Servlet. Debería obtener un mensaje de saludo.
+
+![image](https://user-images.githubusercontent.com/63562181/224183848-f02208e6-302b-47a6-897e-2e210e8b68b5.png)
+
