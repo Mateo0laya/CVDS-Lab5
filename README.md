@@ -21,7 +21,7 @@
 
 3.Realice una nueva conexión con telnet, esta vez a: Host:www.httpbin.org Ahora,solicite (GET) el recurso /html.¿Qué se obtiene como resultado?
 
-![image](https://user-images.githubusercontent.com/63562181/223794403-bfdf1039-32ae-48d9-bf64-04959c2e8931.png)
+![image](https://user-images.githubusercontent.com/63562181/224108006-6926ca85-c9fa-428d-9332-c3560f4a18be.png)
 
 El error generado es 400 Bad Request, además de devolver una estructura html.
 
