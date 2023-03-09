@@ -9,8 +9,8 @@
   
 ![thumbnail_image](https://user-images.githubusercontent.com/63562181/224107719-6824a551-d5d0-4574-8258-ea02e84060ba.png)
 
-  El error generado es 400 Bad Request, el servidor no puede o no procesará la solicitud debido a un aparente error del cliente (p. ej., sintaxis de solicitud mal
-  formada, tamaño demasiado grande, marco de mensaje de solicitud no válido o enrutamiento de solicitud engañoso).
+ El error generado es 301 Moved Permanently, es un código de estado de HTTP que indica que el host ha sido capaz de comunicarse con el servidor, pero que el recurso solicitado ha sido movido a otra dirección permanentemente.
+  
   
 2.¿Qué otros ódigos de error existen?,¿En qué caso se manejarán?
   - 1xx respuesta informativa : se recibió la solicitud, proceso continuo
