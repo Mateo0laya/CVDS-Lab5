@@ -80,3 +80,17 @@ mvn archetype:generate -DgroupId=edu.eci.cvds -DartifactId=WebApp -Dpackage=edu.
 EL servidor embebido de Tomcat esta configurado en el puerto 8080:
 
 ![image](https://user-images.githubusercontent.com/63562181/224181841-bb185c8a-5078-4556-8fd5-2cdae390bd43.png)
+
+
+4. Compile y ejecute la aplicación en elservidor embebido Tomcat, a través de Maven con:
+
+```
+mvn package
+mvn tomcat7:run
+```
+![image](https://user-images.githubusercontent.com/63562181/224182658-22f48f90-bc3e-4789-908f-70b5161c56c2.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224182843-bb9e1d04-4d9d-4da6-bbf4-76da70c116a3.png)
+
+5.Abra un navegador, y en la barra de direcciones ponga la URL con la cualse le enviarán peticiones al ‘SampleServlet’. Tenga en cuenta que la URL tendrá
+como host ‘localhost’,como puerto, elconfigurado en el pom.xml y el path debe ser el del Servlet. Debería obtener un mensaje de saludo.
