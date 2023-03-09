@@ -28,7 +28,8 @@ El error generado es 400 Bad Request, además de devolver una estructura html.
 5. Seleccione elcontenido HTML de la respuesta y copielo alcortapapeles CTRL-SHIFT-C. Ejecute elcomando wc (word count) para contar palabrascon la
 opción -c para contar el número de caracteres:
 
-![image](https://user-images.githubusercontent.com/63562181/223797008-ce5f8da0-9437-4710-88a3-dd99d78adba0.png)
+![image (1)](https://user-images.githubusercontent.com/63562181/224108148-f24e3fca-2235-47c5-a2f9-baf974ed7b65.png)
+
 
 Claro está, las peticiones GET son insuficientes en muchoscasos. Investigue:¿Cuál esla diferencia entre los verbos GET y POST?¿Qué otrostipos de
 peticiones existen?
