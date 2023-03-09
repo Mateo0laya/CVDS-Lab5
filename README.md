@@ -73,4 +73,9 @@ Comando:
 ```
 mvn archetype:generate -DgroupId=edu.eci.cvds -DartifactId=WebApp -Dpackage=edu.eci.cvds.servlet -DarchetypeArtifactId=maven-archetype-webapp
 ```
-2.  
+2. Agregamos las dependecias en el pom.xml y modificamos los valores indicados.
+
+3. Revise en el pom.xml para qué puerto TCP/IP está configurado elservidor embebido de Tomcat (versección de plugins). 
+EL servidor embebido de Tomcat esta configurado en el puerto 8080:
+
+![image](https://user-images.githubusercontent.com/63562181/224181841-bb185c8a-5078-4556-8fd5-2cdae390bd43.png)
