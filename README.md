@@ -68,4 +68,9 @@ curl -i www.httpbin.org
 ### PARTE II. -HACIENDO UNA APLICACIÓN WEB DINÁMICA A BAJO NIVEL.
 
 1.  Para esto,cree un proyecto maven nuevo usando el arquetipo de aplicación Web estándar maven-archetype-webapp y realice lo siguiente:
+
+Comando:
+```
+mvn archetype:generate -DgroupId=edu.eci.cvds -DartifactId=WebApp -Dpackage=edu.eci.cvds.servlet -DarchetypeArtifactId=maven-archetype-webapp
+```
 2.  
