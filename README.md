@@ -168,3 +168,72 @@ public class Todo{
     }
 }
 ```
+10. Utilice la siguiente clase para consumir el servicio que se encuentra en la dirección url del punto anterior:
+
+![image](https://user-images.githubusercontent.com/63562181/224216581-29894f98-c80a-4632-8c38-696f9115f2da.png)
+
+
+11. Cree una clase que herede de la clase HttpServlet (similar a SampleServlet), y para la misma sobrescriba el método heredado doGet. Incluya la
+anotación @Override para verificar –en tiempo de compilación- que efectivamente se esté sobreescribiendo un método de las superclases.
+
+12. Para indicar en qué URL elservlet interceptará las peticiones GET, agregue al método la anotación @WebServlet, y en dicha anotación, defina la
+propiedad urlPatterns, indicando la URL (que usted defina) a la cualse asociará elservlet.
+
+13. Teniendo en cuenta lassiguientes métodos disponibles en los objetos ServletRequest y ServletResponse recibidos por el método doGet:
+
+```
+package edu.eci.cvds.servlet;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.net.MalformedURLException;
+import java.nio.charset.MalformedInputException;
+import java.util.ArrayList;
+import java.util.Optional;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.NotFoundException;
+
+import edu.eci.cvds.servlet.model.Todo;
+
+@WebServlet(
+    urlPatterns = "/olayaOñate"
+)
+public class Servlet extends HttpServlet{
+
+    static final long serialVersionUID = 35L;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        Writer responseWriter = resp.getWriter();
+
+        try{
+            // El id es un entero, Si se le paso un valor al parametro las banderas seran true, se optione con el metodo get de la clase optional
+            Optional<String> optId = Optional.ofNullable(req.getParameter("Id")); //Objecto Opcional del parametro Id de la solicitud
+            // Si no se paso un valor en el paramtro se le asigna 0
+            int id = optId.isPresent() && !optId.get().isEmpty() ? Integer.parseInt(optId.get()) : 0; 
+            // Consultando item con la clase Service
+            Todo item = Service.getTodo(id);
+            // Respondiendo con el código HTTP que equivale a ‘OK’
+            resp.setStatus(HttpServletResponse.SC_OK);
+            // Tabla
+            ArrayList<Todo> todoList = new ArrayList<>();
+            todoList.add(item);
+            responseWriter.write(Service.todosToHTMLTable(todoList));
+            responseWriter.flush();
+        }catch(NotFoundException e){
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);  
+        }catch(NumberFormatException e){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }catch(MalformedURLException e){
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }catch(Exception e){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
+}
+```
