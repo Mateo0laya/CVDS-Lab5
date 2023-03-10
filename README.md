@@ -249,3 +249,47 @@ public class Servlet extends HttpServlet{
 
 ![image](https://user-images.githubusercontent.com/63562181/224443833-f03632e4-857a-4a27-8b5e-df9414238016.png)
 
+---
+
+### PARTE III.
+
+16. En su servlet,sobreescriba el método doPost, y haga la misma implementación del doGet.
+
+```
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        Writer responseWriter = resp.getWriter();
+        String mssg = "";
+        try{
+            // El id es un entero, Si se le paso un valor al parametro las banderas seran true, se optione con el metodo get de la clase optional
+            Optional<String> optId = Optional.ofNullable(req.getParameter("id")); //Objecto Opcional del parametro Id de la solicitud
+            // Si no se paso un valor en el paramtro se le asigna 0
+            // Consultando item con la clase Service
+            Todo item = Service.getTodo(Integer.parseInt(optId.get()));
+            // Respondiendo con el código HTTP que equivale a ‘OK’
+            resp.setStatus(HttpServletResponse.SC_OK);
+            // Tabla
+            ArrayList<Todo> todoList = new ArrayList<>();
+            todoList.add(item);
+            mssg = Service.todosToHTMLTable(todoList);
+        }catch(FileNotFoundException e){
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            mssg = Service.getErrorMessageToHTML(404, "Item no encontrado");
+        }catch(NumberFormatException e){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            mssg = Service.getErrorMessageToHTML(400, "Requerimiento invalido");
+        }catch(MalformedURLException e){
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            mssg = Service.getErrorMessageToHTML(500, "Error interno en el servidor");
+        }catch(Exception e){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            mssg = Service.getErrorMessageToHTML(400, "Requerimiento invalido");
+        }finally{
+            responseWriter.write(mssg);
+        }
+    }
+```
+
+17. Cree el archivo index.html en el directorio src/main/webapp/index.html de la siguiente manera:
+
