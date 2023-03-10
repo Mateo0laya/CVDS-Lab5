@@ -291,5 +291,8 @@ public class Servlet extends HttpServlet{
     }
 ```
 
-17. Cree el archivo index.html en el directorio src/main/webapp/index.html de la siguiente manera:
+17. Cree el archivo index.html en el directorio src/main/webapp/index.html de la siguiente manera.
 
+18. En la página anterior, cree un formulario que tenga un campo para ingresar un número (si no ha manejado html antes, revise
+http://www.w3schools.com/html/ ) y un botón. El formulario debe usarcomo método ‘POST’, y como acción, la ruta relativa del último servletcreado
+(es decir la URL pero excluyendo ‘http://localhost:8080/’).
