@@ -113,3 +113,7 @@ un parámetro GET (si no sabe como hacerlo, revise la documentación en http://w
 </dependency>
 
 ```
+8. En el navegador revise la dirección https://jsonplaceholder.typicode.com/todos/1. Intente cambiando diferentes números al final del path de la url.
+
+![image](https://user-images.githubusercontent.com/63562181/224213702-fc1348d3-1dd1-4fc2-a203-aadcc2ae3e9f.png)
+ 
