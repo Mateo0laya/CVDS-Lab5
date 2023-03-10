@@ -179,7 +179,7 @@ anotación @Override para verificar –en tiempo de compilación- que efectivame
 12. Para indicar en qué URL elservlet interceptará las peticiones GET, agregue al método la anotación @WebServlet, y en dicha anotación, defina la
 propiedad urlPatterns, indicando la URL (que usted defina) a la cualse asociará elservlet.
 
-13. Teniendo en cuenta lassiguientes métodos disponibles en los objetos ServletRequest y ServletResponse recibidos por el método doGet:
+13. Teniendo en cuenta los siguientes métodos disponibles en los objetos ServletRequest y ServletResponse recibidos por el método doGet:
 
 ```
 package edu.eci.cvds.servlet;
