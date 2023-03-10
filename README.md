@@ -241,3 +241,11 @@ public class Servlet extends HttpServlet{
 
 ![image](https://user-images.githubusercontent.com/63562181/224440272-060992c1-95b8-47d9-834b-56c3cba02e1d.png)
 
+15. Intente hacer diferentesconsultas desde un navegador Web para probar las diferentesfuncionalidades.
+
+![image](https://user-images.githubusercontent.com/63562181/224443898-56fcd41d-746b-4915-92fb-8e140625d967.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224443765-09bbf800-602d-4b95-8a4e-6ddc59a0f77f.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224443833-f03632e4-857a-4a27-8b5e-df9414238016.png)
+
