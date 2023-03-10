@@ -25,8 +25,7 @@
 
 Se muestra un 200 OK, código de respuesta de estado satisfactorio HTTP 200 OK indica que la solicitud ha tenido éxito.
 
-5. Seleccione elcontenido HTML de la respuesta y copielo alcortapapeles CTRL-SHIFT-C. Ejecute elcomando wc (word count) para contar palabrascon la
-opción -c para contar el número de caracteres:
+4. Seleccione el contenido HTML de la respuesta y copielo alcortapapeles CTRL-SHIFT-C. Ejecute elcomando wc (word count) para contar palabrascon la opción -c para       contar el número de caracteres:
 
 ![image (1)](https://user-images.githubusercontent.com/63562181/224108148-f24e3fca-2235-47c5-a2f9-baf974ed7b65.png)
 
@@ -62,6 +61,7 @@ curl -i www.httpbin.org
 ![image](https://user-images.githubusercontent.com/63562181/223802179-fdd1b719-e2ec-4752-8d0b-8b0eae694b3e.png)
 
 ¿Cuáles son las diferencias con los diferentes parámetros?
+Ambos parametros muestran información similar,, sin embargo el parametro -v muestra información adicional acerca del Request realizado como la direccion ip a la cual estamos realizando el GET, el puerto al cual se esta intentando comunicar, etc.
 
 ---
 
@@ -73,4 +73,179 @@ Comando:
 ```
 mvn archetype:generate -DgroupId=edu.eci.cvds -DartifactId=WebApp -Dpackage=edu.eci.cvds.servlet -DarchetypeArtifactId=maven-archetype-webapp
 ```
-2.  
+2. Agregamos las dependecias en el pom.xml y modificamos los valores indicados.
+
+3. Revise en el pom.xml para qué puerto TCP/IP está configurado elservidor embebido de Tomcat (versección de plugins). 
+
+EL servidor embebido de Tomcat esta configurado en el puerto 8080:
+
+![image](https://user-images.githubusercontent.com/63562181/224181841-bb185c8a-5078-4556-8fd5-2cdae390bd43.png)
+
+
+4. Compile y ejecute la aplicación en elservidor embebido Tomcat, a través de Maven con:
+
+```
+mvn package
+mvn tomcat7:run
+```
+![image](https://user-images.githubusercontent.com/63562181/224182658-22f48f90-bc3e-4789-908f-70b5161c56c2.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224182843-bb9e1d04-4d9d-4da6-bbf4-76da70c116a3.png)
+
+5. Abra un navegador, y en la barra de direcciones ponga la URL con la cualse le enviarán peticiones al ‘SampleServlet’. Tenga en cuenta que la URL tendrá
+como host ‘localhost’,como puerto, elconfigurado en el pom.xml y el path debe ser el del Servlet. Debería obtener un mensaje de saludo.
+
+![image](https://user-images.githubusercontent.com/63562181/224201250-8d1d64c9-d855-4c7b-a838-0823d00e7f19.png)
+
+
+6. Observe que el Servlet ‘SampleServlet’ acepta peticiones GET, y opcionalmente, lee el parámetro ‘name’. Ingrese la misma URL, pero ahora agregando
+un parámetro GET (si no sabe como hacerlo, revise la documentación en http://www.w3schools.com/tags/ref_httpmethods.asp).
+
+![image](https://user-images.githubusercontent.com/63562181/224201908-09934dc5-9353-4919-b66b-d8a594dfb65e.png)
+
+7. Busque el artefacto gson en el repositorio de maven y agregue la dependencia.
+```
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.10.1</version>
+</dependency>
+
+```
+8. En el navegador revise la dirección https://jsonplaceholder.typicode.com/todos/1. Intente cambiando diferentes números al final del path de la url.
+
+![image](https://user-images.githubusercontent.com/63562181/224213702-fc1348d3-1dd1-4fc2-a203-aadcc2ae3e9f.png)
+ 
+ 
+ 9. Basado en la respuesta que le da el servicio del punto anterior,cree la clase edu.eci.cvds.servlet.model.Todo con un constructor vacío y
+los métodos getter y setter para las propiedades de los"To Dos" que se encuentran en la url indicada.
+```
+package edu.eci.cvds.servlet.model;
+
+public class Todo{
+
+    private int userId;
+    private int id;
+    private String title;
+    private boolean completed;
+
+    public Todo(){
+    }
+
+    public int getUserId(){
+        return userId;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public boolean getCompleted(){
+        return completed;
+
+    }
+
+    public void setUserId(int userId){
+        this.userId = userId;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+    public void setCompleted(boolean completed){
+        this.completed = completed;
+
+    }
+}
+```
+10. Utilice la siguiente clase para consumir el servicio que se encuentra en la dirección url del punto anterior:
+
+![image](https://user-images.githubusercontent.com/63562181/224216581-29894f98-c80a-4632-8c38-696f9115f2da.png)
+
+
+11. Cree una clase que herede de la clase HttpServlet (similar a SampleServlet), y para la misma sobrescriba el método heredado doGet. Incluya la
+anotación @Override para verificar –en tiempo de compilación- que efectivamente se esté sobreescribiendo un método de las superclases.
+
+12. Para indicar en qué URL elservlet interceptará las peticiones GET, agregue al método la anotación @WebServlet, y en dicha anotación, defina la
+propiedad urlPatterns, indicando la URL (que usted defina) a la cualse asociará elservlet.
+
+13. Teniendo en cuenta los siguientes métodos disponibles en los objetos ServletRequest y ServletResponse recibidos por el método doGet:
+
+```
+package edu.eci.cvds.servlet;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.net.MalformedURLException;
+import java.nio.charset.MalformedInputException;
+import java.util.ArrayList;
+import java.util.Optional;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.NotFoundException;
+
+import edu.eci.cvds.servlet.model.Todo;
+
+@WebServlet(
+    urlPatterns = "/olayaOñate"
+)
+public class Servlet extends HttpServlet{
+
+    static final long serialVersionUID = 35L;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        Writer responseWriter = resp.getWriter();
+
+        try{
+            // El id es un entero, Si se le paso un valor al parametro las banderas seran true, se optione con el metodo get de la clase optional
+            Optional<String> optId = Optional.ofNullable(req.getParameter("Id")); //Objecto Opcional del parametro Id de la solicitud
+            // Si no se paso un valor en el paramtro se le asigna 0
+            int id = optId.isPresent() && !optId.get().isEmpty() ? Integer.parseInt(optId.get()) : 0; 
+            // Consultando item con la clase Service
+            Todo item = Service.getTodo(id);
+            // Respondiendo con el código HTTP que equivale a ‘OK’
+            resp.setStatus(HttpServletResponse.SC_OK);
+            // Tabla
+            ArrayList<Todo> todoList = new ArrayList<>();
+            todoList.add(item);
+            responseWriter.write(Service.todosToHTMLTable(todoList));
+            responseWriter.flush();
+        }catch(NotFoundException e){
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);  
+        }catch(NumberFormatException e){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }catch(MalformedURLException e){
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }catch(Exception e){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
+}
+```
+14. Una vez hecho esto, verifique el funcionamiento de la aplicación, recompile y ejecute la aplicación.
+
+![image](https://user-images.githubusercontent.com/63562181/224440272-060992c1-95b8-47d9-834b-56c3cba02e1d.png)
+
+15. Intente hacer diferentesconsultas desde un navegador Web para probar las diferentesfuncionalidades.
+
+![image](https://user-images.githubusercontent.com/63562181/224443898-56fcd41d-746b-4915-92fb-8e140625d967.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224443765-09bbf800-602d-4b95-8a4e-6ddc59a0f77f.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224443833-f03632e4-857a-4a27-8b5e-df9414238016.png)
+
