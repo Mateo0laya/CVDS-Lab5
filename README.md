@@ -117,3 +117,54 @@ un parámetro GET (si no sabe como hacerlo, revise la documentación en http://w
 
 ![image](https://user-images.githubusercontent.com/63562181/224213702-fc1348d3-1dd1-4fc2-a203-aadcc2ae3e9f.png)
  
+ 
+ 9. Basado en la respuesta que le da el servicio del punto anterior,cree la clase edu.eci.cvds.servlet.model.Todo con un constructor vacío y
+los métodos getter y setter para las propiedades de los"To Dos" que se encuentran en la url indicada.
+```
+package edu.eci.cvds.servlet.model;
+
+public class Todo{
+
+    private int userId;
+    private int id;
+    private String title;
+    private boolean completed;
+
+    public Todo(){
+    }
+
+    public int getUserId(){
+        return userId;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public boolean getCompleted(){
+        return completed;
+
+    }
+
+    public void setUserId(int userId){
+        this.userId = userId;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+    public void setCompleted(boolean completed){
+        this.completed = completed;
+
+    }
+}
+```
