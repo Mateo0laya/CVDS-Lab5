@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:25:04 -0500] "GET /SampleServlet HTTP/1.1" 404 977 http-bio-8080-exec-1 132
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:25:04 -0500] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-4 6
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:25:47 -0500] "GET /edu/eci/cvds/servlet HTTP/1.1" 404 991 http-bio-8080-exec-6 3
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:25:54 -0500] "GET /java/edu/eci/cvds/servlet HTTP/1.1" 404 1001 http-bio-8080-exec-9 3
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:26:13 -0500] "GET /main/java/edu/eci/cvds/servlet HTTP/1.1" 404 1011 http-bio-8080-exec-2 3
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:26:18 -0500] "GET /src/main/java/edu/eci/cvds/servlet HTTP/1.1" 404 1019 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:26:31 -0500] "GET /WebApp/src/main/java/edu/eci/cvds/servlet HTTP/1.1" 404 1033 http-bio-8080-exec-7 2
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:27:48 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-9 2332
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:18:28:38 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:35:02 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-1 10553
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:35:18 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-5 31004
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:36:19 -0500] "GET /SampleServlet HTTP/1.1" 404 977 http-bio-8080-exec-9 2706
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:36:26 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-9 37
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:38:09 -0500] "GET /helloServlet HTTP/1.1" 200 16 http-bio-8080-exec-10 30760
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:41:59 -0500] "GET /helloServlet?name=Andres HTTP/1.1" 200 22 http-bio-8080-exec-1 258
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:42:41 -0500] "GET /helloServlet?name=%20Andres HTTP/1.1" 200 23 http-bio-8080-exec-6 1
+0:0:0:0:0:0:0:1 - - [09/Mar/2023:20:44:13 -0500] "GET /helloServlet?name=%20Andres HTTP/1.1" 200 23 http-bio-8080-exec-8 3
