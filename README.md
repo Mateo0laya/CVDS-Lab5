@@ -237,3 +237,7 @@ public class Servlet extends HttpServlet{
     }
 }
 ```
+14. Una vez hecho esto, verifique el funcionamiento de la aplicación, recompile y ejecute la aplicación.
+
+![image](https://user-images.githubusercontent.com/63562181/224440272-060992c1-95b8-47d9-834b-56c3cba02e1d.png)
+
