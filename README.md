@@ -99,3 +99,5 @@ como host ‘localhost’,como puerto, elconfigurado en el pom.xml y el path deb
 
 6. Observe que el Servlet ‘SampleServlet’ acepta peticiones GET, y opcionalmente, lee el parámetro ‘name’. Ingrese la misma URL, pero ahora agregando
 un parámetro GET (si no sabe como hacerlo, revise la documentación en http://www.w3schools.com/tags/ref_httpmethods.asp).
+
+![image](https://user-images.githubusercontent.com/63562181/224201908-09934dc5-9353-4919-b66b-d8a594dfb65e.png)
