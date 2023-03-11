@@ -331,3 +331,5 @@ browserse valide que el valor ingresado es un valor numérico.
 20. Recompile y ejecute la aplicación. Abra en su navegador en la página del formulario, y rectifique que la página hecha anteriormente sea
 mostrada. Ingrese los datos y verifique losresultados. Cambie el formulario para que ahora en lugar de POST, use el método GET . Qué diferencia
 observa?
+
+![image](https://user-images.githubusercontent.com/63562181/224453123-c92118d9-7775-4d8b-8a38-b32c065bbd1e.png)
