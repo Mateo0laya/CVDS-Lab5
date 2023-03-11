@@ -299,3 +299,7 @@ http://www.w3schools.com/html/ ) y un botón. El formulario debe usarcomo métod
 
 19. Revise este ejemplo de validación de formularios con javascript y agruéguelo a su formulario, de manera que -al momento de hacer ‘submit’- desde el
 browserse valide que el valor ingresado es un valor numérico.
+
+20. Recompile y ejecute la aplicación. Abra en su navegador en la página del formulario, y rectifique que la página hecha anteriormente sea
+mostrada. Ingrese los datos y verifique losresultados. Cambie el formulario para que ahora en lugar de POST, use el método GET . Qué diferencia
+observa?
