@@ -299,7 +299,35 @@ http://www.w3schools.com/html/ ) y un botón. El formulario debe usarcomo métod
 
 19. Revise este ejemplo de validación de formularios con javascript y agruéguelo a su formulario, de manera que -al momento de hacer ‘submit’- desde el
 browserse valide que el valor ingresado es un valor numérico.
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
 
+        <script>
+            function myFunction() {
+                var x = document.getElementById("id").value;
+                if (isNaN(x)) {
+                    alert("Entrada invalida");
+                    return false;
+                }
+            }
+        </script>
+    
+        <h1>Formulario</h1>
+
+        <form action="http://localhost:8080/olayaOnate" method="post">
+            <label for="id">Identificador</label><br>
+            <input type="text" id="id" name="id"><br>
+            <input type="submit" onclick="myFunction()" value="Submit">
+          </form> 
+    </body>
+</html>
+```
 20. Recompile y ejecute la aplicación. Abra en su navegador en la página del formulario, y rectifique que la página hecha anteriormente sea
 mostrada. Ingrese los datos y verifique losresultados. Cambie el formulario para que ahora en lugar de POST, use el método GET . Qué diferencia
 observa?
