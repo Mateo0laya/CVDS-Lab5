@@ -349,3 +349,43 @@ Service.java ayuda a mostrar los elementos en a manera de tabla.
 
 ---
 ### PARTE IV. - FRAMEWORKS WEB MVC – JAVA SERVER FACES /PRIME FACES
+
+
+1. Al proyecto Maven, debe agregarle las dependencias masrecientes de javax.javaee-api, com.sun.faces.jsf-api, com.sun.faces.jsf-impl,
+javax.servlet.jstl y Primefaces(en el archivo pom.xml).
+```
+    <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+    <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>8.0</version>
+        <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+    <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-api</artifactId>
+        <version>2.2.20</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
+    <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-impl</artifactId>
+        <version>2.2.20</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+    <dependency>
+        <groupId>org.primefaces</groupId>
+        <artifactId>primefaces</artifactId>
+        <version>12.0.0</version>
+    </dependency>
+```
+2. Para que configure automáticamente el descriptor de despliegue de la aplicación (archivoweb.xml), de manera que el framework JSF se active al inicio
+de la aplicación, en el archivo web.xml agregue la siguiente configuración:
+
