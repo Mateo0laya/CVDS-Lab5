@@ -389,3 +389,4 @@ javax.servlet.jstl y Primefaces(en el archivo pom.xml).
 2. Para que configure automáticamente el descriptor de despliegue de la aplicación (archivoweb.xml), de manera que el framework JSF se active al inicio
 de la aplicación, en el archivo web.xml agregue la siguiente configuración:
 
+3. Revise cada una de lasconfiguraciones agregadas anteriormente para saber qué hacen y por qué se necesitan. Elimine las que no se necesiten.
