@@ -341,6 +341,11 @@ Encontramos que al relaizar la solitud la URL es distinta:
 
 ![image](https://user-images.githubusercontent.com/63562181/224453276-632abd6b-f0ca-4ab7-9b5a-f7bbf13c909d.png)
 
+21. ¿Qué se está viendo? Revise cómo están implementados los métodos de la clase Service.java para entender el funcionamiento interno.
 
+Se presenta una tabla con los datos definidos en https://jsonplaceholder.typicode.com/todos/1.
 
+Service.java ayuda a mostrar los elementos en a manera de tabla.
 
+---
+### PARTE IV. - FRAMEWORKS WEB MVC – JAVA SERVER FACES /PRIME FACES
