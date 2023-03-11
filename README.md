@@ -296,3 +296,6 @@ public class Servlet extends HttpServlet{
 18. En la página anterior, cree un formulario que tenga un campo para ingresar un número (si no ha manejado html antes, revise
 http://www.w3schools.com/html/ ) y un botón. El formulario debe usarcomo método ‘POST’, y como acción, la ruta relativa del último servletcreado
 (es decir la URL pero excluyendo ‘http://localhost:8080/’).
+
+19. Revise este ejemplo de validación de formularios con javascript y agruéguelo a su formulario, de manera que -al momento de hacer ‘submit’- desde el
+browserse valide que el valor ingresado es un valor numérico.
