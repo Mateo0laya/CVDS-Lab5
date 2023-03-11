@@ -390,3 +390,6 @@ javax.servlet.jstl y Primefaces(en el archivo pom.xml).
 de la aplicación, en el archivo web.xml agregue la siguiente configuración:
 
 3. Revise cada una de las configuraciones agregadas anteriormente para saber qué hacen y por qué se necesitan. Elimine las que no se necesiten.
+
+4. Ahora, va a crear un Backing-Bean de sesión, elcual, para cada usuario, mantendrá de lado delservidor lassiguientes propiedades: a. El
+número que actualmente debe adivinar (debe ser un número aleatorio).
