@@ -296,3 +296,56 @@ public class Servlet extends HttpServlet{
 18. En la página anterior, cree un formulario que tenga un campo para ingresar un número (si no ha manejado html antes, revise
 http://www.w3schools.com/html/ ) y un botón. El formulario debe usarcomo método ‘POST’, y como acción, la ruta relativa del último servletcreado
 (es decir la URL pero excluyendo ‘http://localhost:8080/’).
+
+19. Revise este ejemplo de validación de formularios con javascript y agruéguelo a su formulario, de manera que -al momento de hacer ‘submit’- desde el
+browserse valide que el valor ingresado es un valor numérico.
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("id").value;
+                if (isNaN(x)) {
+                    alert("Entrada invalida");
+                    return false;
+                }
+            }
+        </script>
+    
+        <h1>Formulario</h1>
+
+        <form action="http://localhost:8080/olayaOnate" method="post">
+            <label for="id">Identificador</label><br>
+            <input type="text" id="id" name="id"><br>
+            <input type="submit" onclick="myFunction()" value="Submit">
+          </form> 
+    </body>
+</html>
+```
+
+![image](https://user-images.githubusercontent.com/63562181/224453123-c92118d9-7775-4d8b-8a38-b32c065bbd1e.png)
+
+20. Recompile y ejecute la aplicación. Abra en su navegador en la página del formulario, y rectifique que la página hecha anteriormente sea
+mostrada. Ingrese los datos y verifique losresultados. Cambie el formulario para que ahora en lugar de POST, use el método GET . Qué diferencia
+observa?
+
+Encontramos que al relaizar la solitud la URL es distinta:
+
+![image](https://user-images.githubusercontent.com/63562181/224453233-b062bb5e-f911-4be6-8efc-1793f0d8c2c9.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224453276-632abd6b-f0ca-4ab7-9b5a-f7bbf13c909d.png)
+
+21. ¿Qué se está viendo? Revise cómo están implementados los métodos de la clase Service.java para entender el funcionamiento interno.
+
+Se presenta una tabla con los datos definidos en https://jsonplaceholder.typicode.com/todos/1.
+
+Service.java ayuda a mostrar los elementos en a manera de tabla.
+
+---
+### PARTE IV. - FRAMEWORKS WEB MVC – JAVA SERVER FACES /PRIME FACES
