@@ -332,4 +332,12 @@ browserse valide que el valor ingresado es un valor numérico.
 mostrada. Ingrese los datos y verifique losresultados. Cambie el formulario para que ahora en lugar de POST, use el método GET . Qué diferencia
 observa?
 
+Encontramos que al relaizar la solitud la URL es distinta:
+
+![image](https://user-images.githubusercontent.com/63562181/224453233-b062bb5e-f911-4be6-8efc-1793f0d8c2c9.png)
+
+![image](https://user-images.githubusercontent.com/63562181/224453276-632abd6b-f0ca-4ab7-9b5a-f7bbf13c909d.png)
+
+
+
 ![image](https://user-images.githubusercontent.com/63562181/224453123-c92118d9-7775-4d8b-8a38-b32c065bbd1e.png)
