@@ -1,5 +1,7 @@
 package edu.eci.cvds.backingBean;
 
+import java.util.concurrent.locks.ReadWriteLock;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
@@ -14,6 +16,22 @@ public class BackingBean {
     private String state;
 
     public BackingBean(){
+    }
+
+    public void guess(int attempt){
+        if (attempt == number){
+            setState("Win: " + reward);
+        }else{
+            setReward(reward - 10000);
+            setState("You still do not win");
+        }
+    }
+
+    public void reset(){
+        int randomNumber = (int)(Math.random()*10 + 1);
+        setNumber(randomNumber);
+        setReward(100000);
+        setState("You still do not win");
     }
 
     public int getNumber(){
