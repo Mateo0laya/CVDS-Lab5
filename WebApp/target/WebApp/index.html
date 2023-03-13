@@ -8,18 +8,19 @@
 
         <script>
             function myFunction() {
-                var x = document.getElementById("number").value.value;
+                var x = document.getElementById("id").value;
                 if (isNaN(x)) {
-                    alert("Entrada invalida, Ingrese un numero");
+                    alert("Entrada invalida");
                     return false;
                 }
             }
         </script>
     
-        <h1>Hello World!</h1>
-        <form action="http://localhost:8080/olayaOnate" method="post">
-            <label for="number">Formulario</label><br>
-            <input type="text" id="number" name="number"><br>
+        <h1>Formulario</h1>
+
+        <form action="http://localhost:8080/olayaOnate" method="get">
+            <label for="id">Identificador</label><br>
+            <input type="text" id="id" name="id"><br>
             <input type="submit" onclick="myFunction()" value="Submit">
           </form> 
     </body>
