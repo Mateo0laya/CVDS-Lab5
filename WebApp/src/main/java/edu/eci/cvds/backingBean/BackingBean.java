@@ -16,11 +16,12 @@ public class BackingBean {
     private String state;
 
     public BackingBean(){
+        reset();
     }
 
     public void guess(int attempt){
         if (attempt == number){
-            setState("Win: " + reward);
+            setState("Win: " + String.valueOf(reward));
         }else{
             setReward(reward - 10000);
             setState("You still do not win");
