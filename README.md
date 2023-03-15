@@ -454,6 +454,6 @@ Ejecutamos los comandos en consola:
 ```
 mvn package
 mvn tomcat7:run
-
 ```
+![image](https://user-images.githubusercontent.com/63562181/225448194-0864596e-8e40-4da7-a43e-be06f10f8934.png)
 
