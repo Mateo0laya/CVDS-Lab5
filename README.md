@@ -388,8 +388,72 @@ javax.servlet.jstl y Primefaces(en el archivo pom.xml).
 ```
 2. Para que configure automáticamente el descriptor de despliegue de la aplicación (archivoweb.xml), de manera que el framework JSF se active al inicio
 de la aplicación, en el archivo web.xml agregue la siguiente configuración:
-
+```
+<servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+</servlet-mapping>
+<welcome-file-list>
+    <welcome-file>faces/index.jsp</welcome-file>
+</welcome-file-list>
+```
 3. Revise cada una de las configuraciones agregadas anteriormente para saber qué hacen y por qué se necesitan. Elimine las que no se necesiten.
 
-4. Ahora, va a crear un Backing-Bean de sesión, elcual, para cada usuario, mantendrá de lado delservidor lassiguientes propiedades: a. El
-número que actualmente debe adivinar (debe ser un número aleatorio).
+4. Ahora, va a crear un Backing-Bean de sesión, elcual, para cada usuario, mantendrá de lado delservidor las siguientes propiedades: 
+Se crea una nueva clase BackingBean con los atributos y metodos asociados.
+
+5. Cree una página XHTML, de nombre guess.xhtml (debe quedar en la ruta src/main/webapp). Revise en la página 13 del manual de PrimeFaces, qué espacios de nombres XML requiere una página de PrimeFaces y cuál es la estructura básica de la misma.
+Creamos el archivo y agregamos la estructura basica encontrada en el recurso mencionado:
+```
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+ <h:head></h:head>
+ <h:body>
+    <p:editor />
+ </h:body>
+</html>
+```
+
+6. Con base en lo anterior, agregue un formulario con identificador guess_form con el siguiente contenido básico:
+```
+<h:body>
+    <h:form id="guess_form">
+    </h:form>
+</h:body>
+```
+
+7. Agregamos al formulario los elementos mencionados en el enunciado:
+```
+        <p:outputLabel  value="#{guessBean.getNumber()}" style="display: none;"/>
+        <h5>Input a number: </h5>
+        <p:inputText binding="#{input}"/>
+        <h5>Tries: </h5>
+        <h:outputLabel value="#{guessBean.getTries()}"/>
+        <h5>State: </h5>
+        <h:outputLabel value="#{guessBean.getState()}"/>
+        <h5>Reward: </h5>
+        <h:outputLabel value="#{guessBean.getReward()}"/>
+
+```
+
+8. l formulario, agregue dos botones de tipo <p:commandButton>, uno para enviar el número ingresado y ver si se atinó, y otro para reiniciar el juego:
+```
+        <p:commandButton value="Send" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.guess(input.value)}"/>
+        <p:commandButton value="Reset" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.reset()}"/>
+```
+
+9. Para verificar el funcionamiento de la aplicación, agregue el plugin tomcat-runner dentro de los plugins de la fase de construcción (build). Tenga encuenta que en la configuración del plugin se indica bajo que ruta quedará la aplicación:
+Ejecutamos los comandos en consola:
+```
+mvn package
+mvn tomcat7:run
+
+```
+
