@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3c.org/1999/xhtml"
         xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -9,15 +10,19 @@
     <h:form id="guess_form">
         <p:outputLabel  value="#{guessBean.getNumber()}" style="display: none;"/>
         <h5>Input a number: </h5>
-        <p:inputText id="numberToGuess" binding="#{input}"/>
+        <p:inputText binding="#{input}"/>
+        <br/>
         <h5>Tries: </h5>
         <h:outputLabel value="#{guessBean.getTries()}"/>
+        <br/>
         <h5>State: </h5>
         <h:outputLabel value="#{guessBean.getState()}"/>
+        <br/>
         <h5>Reward: </h5>
         <h:outputLabel value="#{guessBean.getReward()}"/>
-        <p:commandButton type="button" value="Send" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.guess(input.value)}"/>
-        <p:commandButton type="button" value="Reset" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.reset()}" />
+        <br/>
+        <p:commandButton value="Send" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.guess(input.value)}"/>
+        <p:commandButton value="Reset" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.reset()}"/>
     </h:form>
 </h:body>
 </html>
