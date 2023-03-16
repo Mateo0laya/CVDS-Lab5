@@ -1,11 +1,14 @@
 package edu.eci.cvds.backingBean;
 
 
+import java.util.ArrayList;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "guessBean")
-@ApplicationScoped
+@SessionScoped
 
 public class BackingBean {
 
@@ -13,13 +16,15 @@ public class BackingBean {
     private int reward;
     private int tries;
     private String state;
+    private ArrayList<Integer> alreadyTried;
 
     public BackingBean(){
         reset();
     }
 
     public void guess(int attempt){
-        tries++;
+        addTry();
+        alreadyTried.add(attempt);
         if (attempt == number){
             setState("Win: " + String.valueOf(reward));
         }else{
@@ -30,6 +35,7 @@ public class BackingBean {
 
     public void reset(){
         int randomNumber = (int)(Math.random()*10 + 1);
+        alreadyTried = new ArrayList<>();
         setTries(0);
         setNumber(randomNumber);
         setReward(100000);
@@ -68,4 +74,14 @@ public class BackingBean {
     public void setReward(int reward){
         this.reward = reward;
     } 
+
+    public void addTry(){
+        int newTry = getTries() + 1;
+        setTries(newTry);
+    }
+
+    public ArrayList<Integer> getAlreadyTried(){
+        return alreadyTried;
+    }
+
 }

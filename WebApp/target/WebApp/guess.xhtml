@@ -23,6 +23,14 @@
         <br/>
         <p:commandButton value="Send" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.guess(input.value)}"/>
         <p:commandButton value="Reset" styleClass="rounded-button" update="guess_form" actionListener="#{guessBean.reset()}"/>
+        <br/>
+        <h:dataTable value="#{guessBean.getAlreadyTried()}" var="tried" rules="rows">
+        <h:column>
+                <f:facet name="header">Tried</f:facet>
+                <h:outputText value="#{tried}" />
+            </h:column> 
+		</h:dataTable>
+		<br/> 
     </h:form>
 </h:body>
 </html>
