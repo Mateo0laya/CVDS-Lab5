@@ -490,3 +490,6 @@ d. Por medio de las herramientas de desarrollador del explorador (Usando la tecl
 
 ![image](https://user-images.githubusercontent.com/63562181/225485201-b6a0d394-00f0-456a-bc61-b1a7dec8230a.png)
 
+11. Para facilitar los intentos del usuario, se agregará una lista de los últimos intentos fallidos realizados:
+
+![image](https://user-images.githubusercontent.com/63562181/225488723-075a167e-691c-4a30-ad50-7d31f0b6a696.png)
