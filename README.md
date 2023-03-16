@@ -475,3 +475,18 @@ Al realizar un intento en modo incognito se conservó el contador, por lo cual m
 ![image](https://user-images.githubusercontent.com/63562181/225483431-9c56829b-026c-42d7-9704-ef385657c396.png)
 
 c. Aborte el proceso de Tomcat-runner haciendo Ctrl+C en la consola, y modifique el código del backing-bean de manera que use la anotación
+@SessionScoped en lugar de @ApplicationScoped. Reinicie la aplicación y repita el ejercicio anterior.
+¿Coinciden los valores del premio?
+
+![image](https://user-images.githubusercontent.com/63562181/225484253-88b4eb78-0cbd-4439-9047-775a24fbf0f0.png)
+
+![image](https://user-images.githubusercontent.com/63562181/225484280-c8997c6f-8814-4853-9240-fa7062dd693a.png)
+
+Dado la anterior, ¿Cuál es la diferencia entre los backing-beans de sesión y los de aplicación?
+
+Se guardan los valores de sesión de manera independiente.
+
+d. Por medio de las herramientas de desarrollador del explorador (Usando la tecla "F12" en la mayoría de exploradores):
+
+![image](https://user-images.githubusercontent.com/63562181/225485201-b6a0d394-00f0-456a-bc61-b1a7dec8230a.png)
+
