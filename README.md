@@ -457,3 +457,39 @@ mvn tomcat7:run
 ```
 ![image](https://user-images.githubusercontent.com/63562181/225448194-0864596e-8e40-4da7-a43e-be06f10f8934.png)
 
+10. Si todo funcionó correctamente, realice las siguientes pruebas:
+
+a. Abra la aplicación en un explorador. Realice algunas pruebas con el juego e intente adivinar el número.
+
+![image](https://user-images.githubusercontent.com/63562181/225483025-7ca61d50-b7c1-4827-b0e2-c8ed28725cf9.png)
+
+b. Abra la aplicación en dos computadores diferentes. Si no dispone de uno, hágalo en dos navegadores diferentes (por ejemplo Chrome y Firefox;
+incluso se puede en un único navegador usando una ventana normal y una ventana de incógnito / privada). Haga cinco intentos en uno, y luego
+un intento en el otro. ¿Qué valor tiene cada uno?
+
+Se realizaron los 5 intentos:
+![image](https://user-images.githubusercontent.com/63562181/225483339-46e0897f-fe85-47ef-9381-d84ec5cc465a.png)
+
+Al realizar un intento en modo incognito se conservó el contador, por lo cual muestra 6 intentos en el registro:
+
+![image](https://user-images.githubusercontent.com/63562181/225483431-9c56829b-026c-42d7-9704-ef385657c396.png)
+
+c. Aborte el proceso de Tomcat-runner haciendo Ctrl+C en la consola, y modifique el código del backing-bean de manera que use la anotación
+@SessionScoped en lugar de @ApplicationScoped. Reinicie la aplicación y repita el ejercicio anterior.
+¿Coinciden los valores del premio?
+
+![image](https://user-images.githubusercontent.com/63562181/225484253-88b4eb78-0cbd-4439-9047-775a24fbf0f0.png)
+
+![image](https://user-images.githubusercontent.com/63562181/225484280-c8997c6f-8814-4853-9240-fa7062dd693a.png)
+
+Dado la anterior, ¿Cuál es la diferencia entre los backing-beans de sesión y los de aplicación?
+
+Se guardan los valores de sesión de manera independiente.
+
+d. Por medio de las herramientas de desarrollador del explorador (Usando la tecla "F12" en la mayoría de exploradores):
+
+![image](https://user-images.githubusercontent.com/63562181/225485201-b6a0d394-00f0-456a-bc61-b1a7dec8230a.png)
+
+11. Para facilitar los intentos del usuario, se agregará una lista de los últimos intentos fallidos realizados:
+
+![image](https://user-images.githubusercontent.com/63562181/225488723-075a167e-691c-4a30-ad50-7d31f0b6a696.png)
